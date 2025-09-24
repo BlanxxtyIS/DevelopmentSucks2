@@ -1,3 +1,5 @@
+using DevelopmentSucks2.Application;
+using DevelopmentSucks2.Infrastructure;
 using DevelopmentSucks2.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,7 +12,12 @@ builder.Services.AddControllers();
 var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseNpgsql(connString)
+
 );
+
+builder.Services.AddControllers();
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 
