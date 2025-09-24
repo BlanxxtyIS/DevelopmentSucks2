@@ -1,4 +1,4 @@
-﻿namespace DevelopmentSucks2.Domain
+﻿namespace Application
 {
     public class Class1
     {
