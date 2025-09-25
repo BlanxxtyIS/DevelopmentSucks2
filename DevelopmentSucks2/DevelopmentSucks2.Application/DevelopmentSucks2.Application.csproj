@@ -14,8 +14,4 @@
     <ProjectReference Include="..\DevelopmentSucks2.Domain\DevelopmentSucks2.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-  </ItemGroup>
-
 </Project>

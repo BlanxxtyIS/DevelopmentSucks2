@@ -1,4 +1,5 @@
-﻿using DevelopmentSucks2.Application.Services;
+﻿using DevelopmentSucks2.Application.DTOs;
+using DevelopmentSucks2.Application.Services;
 using DevelopmentSucks2.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,7 +25,7 @@ public class CoursesController : ControllerBase
     }
 
     [HttpGet("{id:guid}")]
-    public async Task<ActionResult<Course>> GetCoursesById(Guid id)
+    public async Task<ActionResult<Course>> GetCourseById(Guid id)
     {
         var course = await _coursesService.GetCourseById(id);
 
@@ -32,21 +33,33 @@ public class CoursesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Guid>> CreateCourse([FromBody] Course course)
+    public async Task<ActionResult<Guid>> CreateCourse([FromBody] CourseDto courseDto)
     {
-        if (course == null)
-            return NotFound("Объект пустой");
+        var course = new Course
+        {
+            Id = Guid.NewGuid(),
+            Title = courseDto.Title,
+            Description = courseDto.Description,
+        };
 
         var createdCourse = await _coursesService.CreateCourse(course);
+
         return CreatedAtAction(
-            nameof(GetCoursesById),
+            nameof(GetCourseById),
             new { id = createdCourse },
             createdCourse);
     }
 
-    [HttpPut]
-    public async Task<ActionResult> UpdateCourse([FromBody] Course course)
+    [HttpPut("{id:guid}")]
+    public async Task<ActionResult> UpdateCourse(Guid id, [FromBody] CourseDto courseDto)
     {
+        var course = new Course
+        {
+            Id = id,
+            Title = courseDto.Title,
+            Description = courseDto.Description
+        };
+
         var updatedCourse = await _coursesService.UpdateCourse(course);
 
         return updatedCourse ? NoContent() : NotFound();

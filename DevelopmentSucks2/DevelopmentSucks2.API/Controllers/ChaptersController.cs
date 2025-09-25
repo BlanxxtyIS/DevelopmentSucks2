@@ -14,5 +14,5 @@ public class ChaptersController: ControllerBase
         _chapterService = chapterService;
     }
 
-
+    //TODO: Добить ChaptersController и создать ChapterDto
 }

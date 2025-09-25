@@ -1,4 +1,6 @@
-﻿namespace DevelopmentSucks2.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DevelopmentSucks2.Domain.Entities;
 
 public class Course
 {

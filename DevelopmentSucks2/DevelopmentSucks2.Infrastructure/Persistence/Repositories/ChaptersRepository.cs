@@ -22,7 +22,7 @@ public class ChaptersRepository : IChaptersRepository
         return chapters;
     }
 
-    public async Task<Chapter> GetChapter(Guid id)
+    public async Task<Chapter?> GetChapter(Guid id)
     {
         var chapter = await _context.Chapters
             .FindAsync(id);
