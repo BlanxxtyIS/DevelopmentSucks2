@@ -41,7 +41,7 @@ public class LessonsController: ControllerBase
             Title = lessonDto.Title,
             Order = lessonDto.Order,
             Content = lessonDto.Content,
-            ChapterId = lessonDto.ChapterId.Value
+            ChapterId = lessonDto.ChapterId
         };
 
         var createdLesson = await _lessonsService.CreateLesson(lesson);
@@ -61,7 +61,7 @@ public class LessonsController: ControllerBase
             Title = lessonDto.Title,
             Order = lessonDto.Order,
             Content = lessonDto.Content,
-            ChapterId = lessonDto.ChapterId.Value
+            ChapterId = lessonDto.ChapterId
         };
 
         var updatedLesson = await _lessonsService.UpdateLesson(lesson);
