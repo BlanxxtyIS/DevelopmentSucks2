@@ -1,6 +1,5 @@
 ﻿using DevelopmentSucks2.Application.DTOs;
-using DevelopmentSucks2.Application.Services;
-using DevelopmentSucks2.Domain.Entities;
+using DevelopmentSucks2.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevelopmentSucks2.API.Controllers;
@@ -35,19 +34,6 @@ public class AuthController: ControllerBase
         return Ok(new { accessToken = jwtToken });
     }
 
-    [HttpGet]
-    public async Task<List<User>> GetAllUsers()
-    {
-        var users = await _authService.GetAllUsers();
-        return users;
-    }
-
-    [HttpGet("{id:guid}")]
-    public async Task<User?> GetUserById(Guid id)
-    {
-        var user = await _authService.GetUserById(id);
-        return user;
-    }
 
     [HttpPost("register")]
     public async Task<ActionResult<Guid?>> RegisterAsync([FromBody] UserDto userDto)

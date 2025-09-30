@@ -1,4 +1,5 @@
-﻿using DevelopmentSucks2.Domain.Entities;
+﻿using DevelopmentSucks2.Application.Services.Interfaces;
+using DevelopmentSucks2.Domain.Entities;
 using DevelopmentSucks2.Domain.Repositories;
 
 namespace DevelopmentSucks2.Application.Services;

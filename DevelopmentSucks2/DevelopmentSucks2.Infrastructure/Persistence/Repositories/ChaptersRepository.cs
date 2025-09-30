@@ -22,7 +22,7 @@ public class ChaptersRepository : IChaptersRepository
         return chapters;
     }
 
-    public async Task<Chapter?> GetChapter(Guid id)
+    public async Task<Chapter> GetChapter(Guid id)
     {
         var chapter = await _context.Chapters
             .FindAsync(id);
@@ -50,7 +50,7 @@ public class ChaptersRepository : IChaptersRepository
         return true;
     }
 
-    public async Task<bool> DeleteChpater(Guid id)
+    public async Task<bool> DeleteChapter(Guid id)
     {
         var deleted = await _context.Chapters
             .Where(c => c.Id == id)

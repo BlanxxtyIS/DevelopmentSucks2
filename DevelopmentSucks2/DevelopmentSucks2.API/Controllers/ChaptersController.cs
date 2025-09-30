@@ -1,5 +1,5 @@
 ﻿using DevelopmentSucks2.Application.DTOs;
-using DevelopmentSucks2.Application.Services;
+using DevelopmentSucks2.Application.Services.Interfaces;
 using DevelopmentSucks2.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,4 +1,5 @@
-﻿using DevelopmentSucks2.Domain.Entities;
+﻿using DevelopmentSucks2.Application.Services.Interfaces;
+using DevelopmentSucks2.Domain.Entities;
 using DevelopmentSucks2.Domain.Repositories;
 
 namespace DevelopmentSucks2.Application.Services;
@@ -68,7 +69,7 @@ public class ChaptersService : IChaptersService
     {
         try
         {
-            return await _repository.DeleteChpater(id);
+            return await _repository.DeleteChapter(id);
         }
         catch (Exception ex)
         {

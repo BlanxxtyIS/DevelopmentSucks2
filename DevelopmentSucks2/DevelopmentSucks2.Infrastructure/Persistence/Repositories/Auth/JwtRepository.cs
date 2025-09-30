@@ -1,4 +1,4 @@
-﻿using DevelopmentSucks2.Domain.Repositories;
+﻿using DevelopmentSucks2.Domain.Repositories.Auth;
 using DevelopmentSucks2.Infrastructure.Persistence.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -6,7 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace DevelopmentSucks2.Infrastructure.Persistence.Repositories;
+namespace DevelopmentSucks2.Infrastructure.Persistence.Repositories.Auth;
 
 public class JwtRepository : IJwtRepository
 {

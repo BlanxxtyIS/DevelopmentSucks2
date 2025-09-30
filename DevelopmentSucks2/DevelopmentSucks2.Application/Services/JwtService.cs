@@ -1,4 +1,5 @@
-﻿using DevelopmentSucks2.Domain.Repositories;
+﻿using DevelopmentSucks2.Application.Services.Interfaces;
+using DevelopmentSucks2.Domain.Repositories.Auth;
 
 namespace DevelopmentSucks2.Application.Services;
 
